@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Card Layout</title>
+  <style>
+    .parent {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      background-color: aqua;
+      justify-items: center;
+    }
+    .child {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      background-color: rgb(213, 245, 213);
+      border: 2px solid blue;
+      border-radius: 15px;
+      width: 250px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .child img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-bottom: 2px solid blue;
+    }
+    p {
+      color: rgb(237, 25, 10);
+      padding: 15px;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child">
+      <img src="1.jpg" alt="Sample Image 1">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ad ipsam laudantium fuga iste eligendi autem.</p>
+    </div>
+    <div class="child">
+      <img src="1.jpg" alt="Sample Image 2">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ad ipsam laudantium fuga iste eligendi autem.</p>
+    </div>
+    <div class="child">
+      <img src="1.jpg" alt="Sample Image 3">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ad ipsam laudantium fuga iste eligendi autem.</p>
+    </div>
+
+      <div class="child">
+      <img src="1.jpg" alt="Sample Image 3">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ad ipsam laudantium fuga iste eligendi autem.</p>
+    </div>
+
+      <div class="child">
+      <img src="1.jpg" alt="Sample Image 3">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ad ipsam laudantium fuga iste eligendi autem.</p>
+    </div>
+  </div>
+</body>
+</html>
