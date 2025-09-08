@@ -5,27 +5,51 @@
 </head>
 <body>
     <script>
-        var a = 10;
+    var a = 10;
     if(a % 2 == 0){
         document.write("The number is even");
     }
     else{
         document.write("The number is odd");
     }
-
-    var x=10;
-    var y=20;
-    var z=30;
-
-    if(x>y && x>z){
-        document.write(x);
+    var x = 10;
+    var y = 20;
+    var z = 30;
+    if(x > y && x > z){
+        document.write("<br>" + x + " is the greatest number");
     }
-    else if(y>x && y>z){
-        document.write(y);
+    else if(y > x && y > z){
+        document.write("<br>" + y + " is the greatest number");
     }
     else{
-        document.write(z);
+        document.write("<br>" + z + " is the greatest number");
+    } 
+    var day;
+    switch(new Date().getDay()){
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+            break;
     }
+    document.write("<br>Today is " + day);
+        
     </script>
     
 </body>
