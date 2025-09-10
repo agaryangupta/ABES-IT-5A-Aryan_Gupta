@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart Counter</title>
+  <style>
+    body {display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
+    .box {width:300px;height:300px;display:flex;flex-direction:column;justify-content:center;align-items:center;border:1px solid #000;border-radius:10px}
+    h2 {margin:0 0 20px 0}
+    .circle {width:80px;height:80px;border-radius:50%;border:2px solid #000;display:flex;justify-content:center;align-items:center;font-size:24px;margin-bottom:20px}
+    button {width:50px;height:30px;margin:0 10px;font-size:18px}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Counter App</h2>
+    <div class="circle" id="count">0</div>
+    <div>
+      <button onclick="dec()">-</button>
+      <button onclick="inc()">+</button>
+    </div>
+  </div>
+  <script>
+    let c=0
+    function inc(){
+      if(c<10){
+        c++
+        document.getElementById("count").innerText=c
+      }else{
+        alert("Maximum value is 10")
+      }
+    }
+    function dec(){
+      if(c>0){
+        c--
+        document.getElementById("count").innerText=c
+      }else{
+        alert("Minimum value is 10")
+      }
+    }
+  </script>
+</body>
+</html>
