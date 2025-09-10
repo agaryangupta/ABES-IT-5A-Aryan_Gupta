@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Piano</title>
+</head>
+<body>
+  <h2>Simple Piano</h2>
+
+  <button onclick="play('c')">C</button>
+  <button onclick="play('d')">D</button>
+  <button onclick="play('e')">E</button>
+  <button onclick="play('f')">F</button>
+  <button onclick="play('g')">G</button>
+  <button onclick="play('a')">A</button>
+
+  <audio id="c" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
+  <audio id="d" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+  <audio id="e" src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"></audio>
+  <audio id="f" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
+  <audio id="g" src="https://actions.google.com/sounds/v1/cartoon/boing.ogg"></audio>
+  <audio id="a" src="https://actions.google.com/sounds/v1/cartoon/concussive_drum_hit.ogg"></audio>
+
+  <script>
+    function play(note) {
+      var sound = document.getElementById(note);
+      sound.currentTime = 0;
+      sound.play();
+    }
+  </script>
+</body>
+</html>
