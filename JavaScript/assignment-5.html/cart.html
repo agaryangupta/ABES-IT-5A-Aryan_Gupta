@@ -1,41 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cart Counter</title>
+  <title>Cart Box</title>
   <style>
-    body {display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
-    .box {width:300px;height:300px;display:flex;flex-direction:column;justify-content:center;align-items:center;border:1px solid #000;border-radius:10px}
-    h2 {margin:0 0 20px 0}
-    .circle {width:80px;height:80px;border-radius:50%;border:2px solid #000;display:flex;justify-content:center;align-items:center;font-size:24px;margin-bottom:20px}
-    button {width:50px;height:30px;margin:0 10px;font-size:18px}
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+    .cart-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    .cart {
+      text-align: center;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    .count {
+      margin: 10px auto;
+      font-size: 24px;
+      font-weight: bold;
+      background: #eee;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      border-radius: 50%;
+    }
+    button {
+      margin: 5px;
+      padding: 6px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: #fff;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    img {
+      margin: 10px 0;
+      max-width: 120px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Counter App</h2>
-    <div class="circle" id="count">0</div>
-    <div>
-      <button onclick="dec()">-</button>
-      <button onclick="inc()">+</button>
+  <div class="cart-box">
+    
+    <!-- Row 1: Counter App -->
+    <div class="cart">
+      <h2>Cart 1: Counter App</h2>
+      <div id="count1" class="count">0</div>
+      <div>
+        <button onclick="dec()">-</button>
+        <button onclick="inc()">+</button>
+      </div>
     </div>
+
+    <!-- Row 2: Hide Image -->
+    <div class="cart">
+      <h2>Cart 2: Hide Image</h2>
+      <img src="image_html.jpg" id="pic" alt="Cart Image">
+      <button onclick="hideImage()">Hide</button>
+    </div>
+
+    <!-- Row 3: Change Image -->
+    <div class="cart">
+      <h2>Cart 3: Change Image</h2>
+      <img src="bus-2.avif" id="pic1" alt="Cart Image">
+      <button onclick="changeImage()">Change</button>
+    </div>
+
   </div>
+
   <script>
-    let c=0
-    function inc(){
-      if(c<10){
-        c++
-        document.getElementById("count").innerText=c
-      }else{
-        alert("Maximum value is 10")
+    let c = 0;
+    function inc() {
+      if (c < 10) {
+        c++;
+        document.getElementById("count1").innerText = c;
+      } else {
+        alert("Maximum value is 10");
       }
     }
-    function dec(){
-      if(c>0){
-        c--
-        document.getElementById("count").innerText=c
-      }else{
-        alert("Minimum value is 10")
+    function dec() {
+      if (c > 0) {
+        c--;
+        document.getElementById("count1").innerText = c;
+      } else {
+        alert("Minimum value is 0");
       }
+    }
+    function hideImage() {
+      document.getElementById("pic").style.display = "none";
+    }
+    function changeImage(){
+        document.getElementById("pic1").src="image_html.jpg";
     }
   </script>
 </body>
