@@ -1,31 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Basic Piano</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
+      margin: 0;
+    }
+    .piano {
+      display: flex;
+    }
+    .key {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      font-weight: bold;
+      padding-bottom: 15px;
+      border: 1px solid #333;
+      cursor: pointer;
+      user-select: none;
+    }
+    .white {
+      width: 60px;
+      height: 200px;
+      background: white;
+      color: black;
+    }
+    .black {
+      width: 40px;
+      height: 120px;
+      background: black;
+      color: white;
+      margin-left: -20px;
+      margin-right: -20px;
+      z-index: 2;
+      position: relative;
+    }
+    .key.active {
+      background: grey !important;
+    }
+  </style>
 </head>
 <body>
-  <h2>Simple Piano</h2>
+  <div class="piano">
+    <div class="key white" data-note="C">A</div>
+    <div class="key black" data-note="Cs">W</div>
+    <div class="key white" data-note="D">S</div>
+    <div class="key black" data-note="Ds">E</div>
+    <div class="key white" data-note="E">D</div>
+    <div class="key white" data-note="F">F</div>
+    <div class="key black" data-note="Fs">R</div>
+    <div class="key white" data-note="G">G</div>
+    <div class="key black" data-note="Gs">T</div>
+    <div class="key white" data-note="A">H</div>
+    <div class="key black" data-note="As">Y</div>
+    <div class="key white" data-note="B">J</div>
+  </div>
 
-  <button onclick="play('c')">C</button>
-  <button onclick="play('d')">D</button>
-  <button onclick="play('e')">E</button>
-  <button onclick="play('f')">F</button>
-  <button onclick="play('g')">G</button>
-  <button onclick="play('a')">A</button>
-
-  <audio id="c" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
-  <audio id="d" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
-  <audio id="e" src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"></audio>
-  <audio id="f" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
-  <audio id="g" src="https://actions.google.com/sounds/v1/cartoon/boing.ogg"></audio>
-  <audio id="a" src="https://actions.google.com/sounds/v1/cartoon/concussive_drum_hit.ogg"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/C4.mp3" id="C"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/Cs4.mp3" id="Cs"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/D4.mp3" id="D"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/Ds4.mp3" id="Ds"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/E4.mp3" id="E"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/F4.mp3" id="F"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/Fs4.mp3" id="Fs"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/G4.mp3" id="G"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/Gs4.mp3" id="Gs"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/A4.mp3" id="A"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/As4.mp3" id="As"></audio>
+  <audio src="https://nemo0.github.io/js-piano/notes/B4.mp3" id="B"></audio>
 
   <script>
-    function play(note) {
-      var sound = document.getElementById(note);
-      sound.currentTime = 0;
-      sound.play();
+    const keys = document.querySelectorAll('.key');
+    const whiteKeys = ['a', 's', 'd', 'f', 'g', 'h', 'j'];
+    const blackKeys = ['w', 'e', 'r', 't', 'y'];
+
+    function playNote(key) {
+      const note = document.getElementById(key.dataset.note);
+      note.currentTime = 0;
+      note.play();
+      key.classList.add('active');
+      setTimeout(() => key.classList.remove('active'), 150); // reset quickly
     }
+
+    keys.forEach(k => k.addEventListener('click', () => playNote(k)));
+
+    document.addEventListener('keydown', e => {
+      if (e.repeat) return;
+      let idx = whiteKeys.indexOf(e.key);
+      if (idx > -1) playNote(document.querySelectorAll('.white')[idx]);
+      idx = blackKeys.indexOf(e.key);
+      if (idx > -1) playNote(document.querySelectorAll('.black')[idx]);
+    });
   </script>
 </body>
 </html>
