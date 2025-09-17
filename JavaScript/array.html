@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Cards</title>
+  <style>
+    .card {
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 2px solid black;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      width: 250px;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+  </style>
 </head>
 <body>
-    <p id="id"></p>
-    <script>
-    //  const arr = [10, 20, 30, 40, 50];
-       // document.getElementById("id").innerHTML = arr;
-        
-       // const car = new Array("Saab", "Volvo", "BMW");
-       // car[1]="Mango";
-       // document.getElementById("id").innerHTML = car;
+  <div class="container">
+    <div class="card">
+      <h2>B.Tech Students</h2>
+      <div id="btech"></div>
+    </div>
 
-        const person = {
-            firstName: "Anvesh",
-            lastName: "Srivastava",
-            age: 50
-        };
-        document.getElementById("id").innerHTML = person.lastName;
-    </script>
+    <div class="card">
+      <h2>Other Students</h2>
+      <div id="others"></div>
+    </div>
+  </div>
+
+  <script>
+    const data = [
+      { name: "aryan", roll_no: 1, class: "btech" },
+      { name: "anvesh", roll_no: 2, class: "btech" },
+      { name: "aryan", roll_no: 3, class: "bcom" },
+      { name: "abhishek", roll_no: 4, class: "bcom" },
+      { name: "anurag", roll_no: 5, class: "btech" }
+    ];
+
+    for (let i = 0; i < data.length; i++) {
+      const student = `${data[i].name} ${data[i].roll_no} ${data[i].class}<br>`;
+      if (data[i].class === "btech") {
+        document.getElementById("btech").innerHTML += student;
+      } else {
+        document.getElementById("others").innerHTML += student;
+      }
+    }
+  </script>
 </body>
 </html>

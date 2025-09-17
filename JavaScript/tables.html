@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-    .even {
-      text-align: left;
-    }
-    .odd {
-      text-align: right;
-    }
-  </style>
-</head>
 <body>
-  <script>
-    var a = 3;
-    for (var i = 1; i <= 10; i++) {
-      var result = a * i;
-      if (result % 2 == 0) {
-        document.write("<div class='even'>Even → " + a + " x " + i + " = " + result + "</div>");
-      } else {
-        document.write("<div class='odd'>Odd → " + a + " x " + i + " = " + result + "</div>");
+  <div style="float:left; width:50%;">
+    <script>
+      var a1 = 11;
+
+      document.write("Table of " + a1 + "<br>");
+      for (var i = 1; i <= 10; i++) {
+        var result = a1 * i;
+        document.write(a1 + " x " + i + " = " + result + "<br>");
       }
-    }
-document.write("<br>");
-document.write("<br>");
-document.write("<br>");
+    </script>
+  </div>
 
-    var a = 11;
-    for (var i = 1; i <= 10; i++) {
-      var result = a * i;
-      if (result % 2 == 0) {
-        document.write("<div class='even'>Even → " + a + " x " + i + " = " + result + "</div>");
-      } else {
-        document.write("<div class='odd'>Odd → " + a + " x " + i + " = " + result + "</div>");
+  <div style="float:right; width:50%; text-align:right;">
+    <script>
+      var a2 = 15;
+
+      document.write("Table of " + a2 + "<br>");
+      for (var i = 1; i <= 10; i++) {
+        var result = a2 * i;
+        document.write(a2 + " x " + i + " = " + result + "<br>");
       }
-    }
+    </script>
+  </div>
 
+  <div style="clear:both; margin-top:30px;">
+    <script>
+      var a1 = 11;
+      var a2 = 15;
 
-    document.write("<br>");
-document.write("<br>");
-document.write("<br>");
+      document.write("<br><b>Combined Results</b><br>");
 
-    var a = 15;
-    for (var i = 1; i <= 10; i++) {
-      var result = a * i;
-      if (result % 2 == 0) {
-        document.write("<div class='even'>Even → " + a + " x " + i + " = " + result + "</div>");
-      } else {
-        document.write("<div class='odd'>Odd → " + a + " x " + i + " = " + result + "</div>");
+      document.write("Even numbers: ");
+      for (var i = 1; i <= 10; i++) {
+        var r1 = a1 * i;
+        var r2 = a2 * i;
+        if (r1 % 2 == 0) document.write(r1 + " ");
+        if (r2 % 2 == 0) document.write(r2 + " ");
       }
-    }
-  </script>
+
+      document.write("<br>Odd numbers: ");
+      for (var i = 1; i <= 10; i++) {
+        var r1 = a1 * i;
+        var r2 = a2 * i;
+        if (r1 % 2 != 0) document.write(r1 + " ");
+        if (r2 % 2 != 0) document.write(r2 + " ");
+      }
+    </script>
+  </div>
 </body>
 </html>
