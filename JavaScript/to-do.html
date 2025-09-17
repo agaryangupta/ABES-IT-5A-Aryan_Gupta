@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    li {
+      margin: 5px 0;
+    }
+    li button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>To Do List</h2>
+  <input id="taskInput" type="text">
+  <button onclick="addTask()">Add</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    function addTask() {
+      let input = document.getElementById("taskInput");
+      if (input.value === "") return;
+      let li = document.createElement("li");
+      li.textContent = input.value + " ";
+      let btn = document.createElement("button");
+      btn.textContent = "Remove";
+      btn.onclick = function() {
+        li.remove();
+      };
+      li.appendChild(btn);
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+</body>
+</html>
