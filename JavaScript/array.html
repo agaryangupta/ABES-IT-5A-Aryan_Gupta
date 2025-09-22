@@ -54,12 +54,22 @@
       }
     }
 
-    const toy={
+    const toy=new Object({
       toy1:"car",
       toy2:"apple",
       toy3:"elephant",
-    }
+    });
     document.getElementById("ary").innerHTML=toy.toy3;
+
+  class Car{
+    constructor(name,year){
+      this.name=name;
+      this.year=year;
+    }
+  }
+  const myCar1=new Car("ford", 2024);
+  const myCar2=new Car("audi", 2025);
+  document.getElementById("ary").innerHTML=myCar1.name;
   </script>
 </body>
 </html>
