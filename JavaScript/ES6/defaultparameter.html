@@ -8,16 +8,10 @@
 <body>
     <p id="ary"></p>
     <script>
-        let abes=()=>"hello";
-        document.getElementById("ary").innerHTML=abes();
-
-    let abes=()=>{
-        return "python is good";
-    }
-    document.getElementById("ary").innerHTML=abes();
-    function abes(){
-        
-    }
+        function multiply(a,b=1){
+            return a*b;
+        }
+        document.getElementById("ary").innerHTML=multiply(5,3);
     </script>
 </body>
 </html>

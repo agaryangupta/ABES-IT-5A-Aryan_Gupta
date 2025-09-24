@@ -82,7 +82,6 @@
     line-height: 1.5;
     text-align: justify;
   }
-
   .timeline {
     position: relative;
     margin-left: 20px;
@@ -121,8 +120,23 @@
     justify-content: space-between;
     margin-top: 10px;
   }
+  /* simple form */
+  .form-inputs {
+    padding: 15px;
+    background: #f4f4f4;
+  }
+  .form-inputs input, .form-inputs textarea, .form-inputs button {
+    margin: 5px 0;
+    padding: 8px;
+    width: 250px;
+  }
+  .form-inputs button {
+    background: #0a66c2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
   </style>
-
 </head>
 <body>
   <div class="container">
@@ -133,7 +147,6 @@
         <h3>CONTACT</h3>
         <p>📞 +123-456-7890</p>
         <p>✉️ hello@reallygreatsite.com</p>
-        <p>📍 123 Anywhere St., Any City</p>
         <p>🌐 www.reallygreatsite.com</p>
       </div>
       <br>
@@ -154,7 +167,7 @@
       <br>
       <div class="section">
         <h3>SKILLS</h3>
-        <ul>
+        <ul id="skills-list">
           <li>Project Management</li>
           <li>Public Relations</li>
           <li>Teamwork</li>
@@ -165,19 +178,26 @@
 
       <div class="section">
         <h3>LANGUAGES</h3>
-        <ul>
+        <ul id="languages-list">
           <li>English (Fluent)</li>
           <li>French (Fluent)</li>
           <li>German (Basic)</li>
           <li>Spanish (Intermediate)</li>
         </ul>
       </div>
+
+      <!-- NEW Address section -->
+      <div class="section">
+        <h3>ADDRESS</h3>
+        <p id="address-text">123 Anywhere St., Any City</p>
+      </div>
     </div>
+
     <div class="right">
       <h1 class="name">
         <br>
-        <span class="first-name">RICHARD</span>
-        <span class="last-name">SANCHEZ</span>
+        <span id="first-name">RICHARD</span>
+        <span class="last-name" id="last-name">SANCHEZ</span>
       </h1>
       <p class="title">
         <span class="underline">SOFTWARE</span> ENGINEER
@@ -248,5 +268,54 @@
       </div>
     </div>
   </div>
+
+  <!-- Form to update fields -->
+  <div class="form-inputs">
+    <h3>Update Resume</h3>
+    <input type="text" id="fname" placeholder="First Name"><br>
+    <input type="text" id="lname" placeholder="Last Name"><br>
+    <textarea id="skills" placeholder="Skills (comma separated)"></textarea><br>
+    <textarea id="languages" placeholder="Languages (comma separated)"></textarea><br>
+    <textarea id="address" placeholder="Address"></textarea><br>
+    <button onclick="updateResume()">Apply Changes</button>
+  </div>
+
+  <script>
+    function updateResume() {
+      // Update name
+      let f = document.getElementById("fname").value.trim();
+      let l = document.getElementById("lname").value.trim();
+      if(f) document.getElementById("first-name").innerText = f.toUpperCase();
+      if(l) document.getElementById("last-name").innerText = l.toUpperCase();
+
+      // Update skills
+      let skillsInput = document.getElementById("skills").value.split(",");
+      let skillsList = document.getElementById("skills-list");
+      if(skillsInput[0].trim() !== "") {
+        skillsList.innerHTML = "";
+        skillsInput.forEach(skill => {
+          let li = document.createElement("li");
+          li.innerText = skill.trim();
+          skillsList.appendChild(li);
+        });
+      }
+
+      // Update languages
+      let langInput = document.getElementById("languages").value.split(",");
+      let langList = document.getElementById("languages-list");
+      if(langInput[0].trim() !== "") {
+        langList.innerHTML = "";
+        langInput.forEach(lang => {
+          let li = document.createElement("li");
+          li.innerText = lang.trim();
+          langList.appendChild(li);
+        });
+      }
+
+      // Update address
+      let addr = document.getElementById("address").value.trim();
+      if(addr) document.getElementById("address-text").innerText = addr;
+    }
+  </script>
 </body>
 </html>
