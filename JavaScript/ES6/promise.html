@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mypromise=new Promise((resolve,reject)=>{
+            const password="aryan";
+            if(password.length>8){
+                resolve("strong password");
+            }
+            else{
+                reject("weak password");
+            }
+        });
+        console.log(mypromise);
+        mypromise.then((message)=>{
+            console.log("this is in then "+message);
+        }).catch((message)=>{
+            console.log("this is in catch "+message);
+        })
+    </script>
+</body>
+</html>
