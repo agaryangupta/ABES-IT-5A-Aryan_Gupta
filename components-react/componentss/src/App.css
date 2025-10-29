@@ -1,5 +1,4 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -39,4 +38,13 @@
 
 .read-the-docs {
   color: #888;
+}
+
+#modify {
+  display: flex;
+  flex-direction: row; /* default, but explicit */
+  justify-content: center; /* centers cards horizontally */
+  align-items: flex-start; /* aligns them vertically at the top */
+  gap: 20px; /* adds space between cards */
+  padding: 20px;
 }
