@@ -8,11 +8,11 @@ const App = () => {
     <>
     <Navbar/>
     <div id ="modify">
-      <Card name={"My"}/>
-      <Card name={"name"}/>
-      <Card name={"is"}/>
-      <Card name={"Aryan"}/>
-      <Card name={"Gupta"}/>
+      <Card name={"My"}  age={"(1)"}/>
+      <Card name={"name"}  age={"."}/>
+      <Card name={"is"}  age={"."}/>
+      <Card name={"Aryan"}  age={"."}/>
+      <Card name={"Gupta"} age={"(20)"}/>
     </div>
     </>
   )
