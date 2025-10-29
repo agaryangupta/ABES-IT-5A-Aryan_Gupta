@@ -1,14 +1,46 @@
-#ary-card{
-    border : 5px solid black;
-    width : 250px;
-    height : 250px;
-    margin: 20px;
-    background-color: lightblue;
+#ary-card {
+  width: 220px;
+  height: 280px;
+  background: #f9fdff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  margin: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-img{
-    width : 120px;
-    height : 120px;
-    border-radius: 50%;
-    margin-top: 20px;
+/* Hover Effect */
+#ary-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #e6f3ff, #ffffff);
+}
+
+/* Image Styling */
+#ary-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #007bff;
+  object-fit: cover;
+}
+
+/* Optional Title/Text inside card */
+#ary-card h3 {
+  margin: 5px 0;
+  color: #222;
+  font-size: 1.1rem;
+}
+
+#ary-card p {
+  color: #555;
+  font-size: 0.9rem;
+  padding: 0 10px;
 }
