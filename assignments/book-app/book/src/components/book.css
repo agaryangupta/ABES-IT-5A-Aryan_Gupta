@@ -1,7 +1,7 @@
 .book {
   border: 3px solid #d32f2f;
   border-radius: 10px;
-  height: 300px;
+  height: 330px;
   width: 250px;
   background-color: coral;
   display: flex;
@@ -10,11 +10,12 @@
   justify-content: space-evenly;
   margin: 15px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .book:hover {
   transform: scale(1.05);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .book-img {
@@ -24,8 +25,48 @@
   border-radius: 8px;
 }
 
-.book-title, .book-price {
+.book-title, 
+.book-price {
   color: white;
   text-align: center;
   margin: 0;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  background-color: white;
+  color: coral;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn.plus:hover {
+  background-color: green;
+  color: white;
+}
+
+.btn.minus:hover {
+  background-color: red;
+  color: white;
+}
+
+.count {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  min-width: 25px;
+  text-align: center;
 }
