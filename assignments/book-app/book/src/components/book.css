@@ -1,6 +1,31 @@
-#book{
-    border: 5px solid red;
-    height: 300px;
-    width: 300px;
-    background-color: coral;
+.book {
+  border: 3px solid #d32f2f;
+  border-radius: 10px;
+  height: 300px;
+  width: 250px;
+  background-color: coral;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book-img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-title, .book-price {
+  color: white;
+  text-align: center;
+  margin: 0;
 }
