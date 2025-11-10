@@ -15,6 +15,15 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  
+  /* Add margin to the right of each button */
+  margin-right: 15px; /* Adjust this value for desired spacing */
+}
+
+/* Remove margin-right from the *last* button in each group */
+.nav-left .nav-btn:last-child,
+.nav-right .nav-btn:last-child {
+    margin-right: 0;
 }
 
 .nav-btn:hover {
