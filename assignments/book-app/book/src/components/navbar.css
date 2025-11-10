@@ -7,10 +7,9 @@
   border-bottom: 4px solid #d32f2f;
 }
 
-/* Style the Link elements like buttons */
 .nav-btn {
-  text-decoration: none; /* removes blue underline */
-  color: black;          /* sets text color */
+  text-decoration: none; 
+  color: black;          
   background-color: white;
   border: none;
   padding: 8px 18px;
@@ -19,22 +18,19 @@
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-right: 15px;
-  display: inline-block; /* ensures proper button spacing */
+  display: inline-block; 
 }
 
-/* Remove margin-right from the last button in each group */
 .nav-left .nav-btn:last-child,
 .nav-right .nav-btn:last-child {
   margin-right: 0;
 }
 
-/* Hover effect */
 .nav-btn:hover {
   background-color: #ff7043;
   color: white;
 }
 
-/* Optional: active page highlight (only works if you use NavLink) */
 .active-link {
   background-color: #d32f2f;
   color: white;
