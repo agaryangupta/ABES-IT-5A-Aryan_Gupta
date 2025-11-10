@@ -7,26 +7,35 @@
   border-bottom: 4px solid #d32f2f;
 }
 
+/* Style the Link elements like buttons */
 .nav-btn {
+  text-decoration: none; /* removes blue underline */
+  color: black;          /* sets text color */
   background-color: white;
   border: none;
   padding: 8px 18px;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  
-  /* Add margin to the right of each button */
-  margin-right: 15px; /* Adjust this value for desired spacing */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 15px;
+  display: inline-block; /* ensures proper button spacing */
 }
 
-/* Remove margin-right from the *last* button in each group */
+/* Remove margin-right from the last button in each group */
 .nav-left .nav-btn:last-child,
 .nav-right .nav-btn:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
+/* Hover effect */
 .nav-btn:hover {
   background-color: #ff7043;
+  color: white;
+}
+
+/* Optional: active page highlight (only works if you use NavLink) */
+.active-link {
+  background-color: #d32f2f;
   color: white;
 }
