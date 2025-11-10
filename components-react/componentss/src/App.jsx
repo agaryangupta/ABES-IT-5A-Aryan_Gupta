@@ -1,12 +1,11 @@
 import React from 'react'
+import { Link1 } from './ccomponents/Link1.jsx'
 
 export const App = () => {
   return (
     <div>
-      <Routes>
-        <Route path = "/" element = {<Home/>}></Route>
-        <Route path = "/about" element = {<About/>}></Route>
-      </Routes> 
+      <Link1/>
     </div>
   )
 }
+export default App;
