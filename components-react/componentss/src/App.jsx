@@ -1,11 +1,16 @@
-import React from 'react'
-import { Link1 } from './ccomponents/Link1.jsx'
+import React, { useEffect, useState } from 'react'
 
 export const App = () => {
+
+  const[Fa,SetFa] = useState([]);
+
+  useEffect(()=>{
+    fetch("https://fakestoreapi.com/products")
+    .then((res)=>res.json())
+    .then((data)=>SetFa(data))
+  },[])
+
   return (
-    <div>
-      <Link1/>
-    </div>
+    <div>App</div>
   )
 }
-export default App;
