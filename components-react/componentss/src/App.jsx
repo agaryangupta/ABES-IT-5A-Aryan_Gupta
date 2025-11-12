@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react'
+import { Fashion } from './ccomponents/Fashion';
 
 export const App = () => {
 
-  const[Fa,SetFa] = useState([]);
+  const[Books,setBooks] = useState([]);
 
   useEffect(()=>{
     fetch("https://fakestoreapi.com/products")
     .then((res)=>res.json())
-    .then((data)=>SetFa(data))
+    .then((data)=>setBooks(data))
   },[])
 
   return (
-    <div>App</div>
+    <div>
+        {
+          Books.map((f,i)=>(
+            <Fashion key={i} props={f}/>
+          ))
+        }
+    </div>
   )
 }
+
+export default App
