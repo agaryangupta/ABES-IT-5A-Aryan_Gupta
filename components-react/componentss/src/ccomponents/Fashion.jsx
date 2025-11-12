@@ -1,4 +1,5 @@
 import React from 'react'
+import './Fashion.css'
 
 export const Fashion = (props) => {
   return (
