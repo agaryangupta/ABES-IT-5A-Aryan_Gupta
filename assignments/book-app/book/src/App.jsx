@@ -19,7 +19,6 @@ function App() {
   );
 }
 
-// ✅ Home page showing your books
 function Home() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: '20px' }}>
