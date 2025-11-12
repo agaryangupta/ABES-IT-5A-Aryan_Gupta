@@ -1,0 +1,136 @@
+/* 🌤️ Overall App Styling */
+/* 🌤️ Overall App Styling */
+.app {
+  height: 100vh;                    /* Full viewport height */
+  width: 100vw;                     /* Full viewport width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;              /* Center horizontally */
+  justify-content: center;          /* Center vertically */
+  text-align: center;
+  background: linear-gradient(135deg, #74ABE2 0%, #5563DE 100%);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;                 /* Avoid scrollbar if not needed */
+}
+
+
+/* 🌈 Title */
+.app h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* 🔍 Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 6px 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-box input {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  width: 220px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #666;
+}
+
+.search-box button {
+  margin-left: 10px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-box button:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* 🌀 Loading & Error Text */
+p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+p[style*="color: salmon"] {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* 🌤 Weather Card Styling */
+.weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px 30px;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  width: 300px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+  animation: fadeIn 0.5s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Weather image + temp */
+.weather-card img {
+  width: 100px;
+  height: 100px;
+}
+
+.weather-card h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.weather-card h1 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+.weather-card p {
+  margin: 6px 0;
+  font-size: 1.1rem;
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
