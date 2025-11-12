@@ -17,7 +17,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Center the weather icon */
+
 .weather-icon {
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
   margin: 15px 0;
 }
 
-/* Text styling */
+
 .weather-card h2 {
   font-size: 1.4rem;
   font-weight: 600;
@@ -43,7 +43,7 @@
   margin: 5px 0;
 }
 
-/* Details row (humidity, wind) */
+
 .details {
   display: flex;
   justify-content: space-between;
@@ -52,7 +52,7 @@
   opacity: 0.9;
 }
 
-/* Animation for card appearance */
+
 @keyframes fadeIn {
   from {
     opacity: 0;

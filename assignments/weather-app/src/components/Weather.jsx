@@ -15,7 +15,7 @@ const Weather = ({ data }) => {
   const condition = data.weather?.[0]?.main?.toLowerCase();
   const description = data.weather?.[0]?.description;
 
-  // Select icon based on weather condition
+  
   const getWeatherIcon = (condition) => {
     switch (condition) {
       case "clear":
