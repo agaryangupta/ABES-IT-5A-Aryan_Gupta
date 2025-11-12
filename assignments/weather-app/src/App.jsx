@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import Weather from "./components/Weather";
-import "./App.css"; // your styling file
+import "./App.css"; 
 
 const App = () => {
-  const [city, setCity] = useState(""); // input value
-  const [weather, setWeather] = useState(null); // API result
+  const [city, setCity] = useState(""); 
+  const [weather, setWeather] = useState(null); 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // read API key from env
   const apiKey = import.meta.env.VITE_OPENWEATHER_KEY;
 
-  // ✅ Debug line to verify Vite reads the key (optional - can remove later)
   console.log("🔑 Loaded API Key:", apiKey);
 
-  // ✅ function to fetch weather by city name
+ 
   const fetchWeatherByCity = async (cityName) => {
     if (!cityName) return;
     setLoading(true);
@@ -47,7 +45,7 @@ const App = () => {
     }
   };
 
-  // ✅ UI handlers
+ 
   const onSearch = () => fetchWeatherByCity(city.trim());
   const onKeyPress = (e) => {
     if (e.key === "Enter") onSearch();
@@ -68,24 +66,24 @@ const App = () => {
         <button onClick={onSearch}>Search</button>
       </div>
 
-      {/* 🧭 Before search, show a friendly hint */}
+      
       {!weather && !loading && !error && (
         <p style={{ fontSize: "1.2rem", opacity: "0.9" }}>
           🔎 Search for a city to view its weather.
         </p>
       )}
 
-      {/* 🔄 Loading State */}
+      
       {loading && <p>🔄 Fetching weather data...</p>}
 
-      {/* ❌ Error State */}
+     
       {error && (
         <p style={{ color: "salmon", fontWeight: "bold" }}>
           ❌ {error}
         </p>
       )}
 
-      {/* 🌤️ Weather Display */}
+      
       {weather && !loading && <Weather data={weather} />}
     </div>
   );
